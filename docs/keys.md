@@ -20,7 +20,7 @@ There are 3 different ways to derive keys:
 
 These are methods are specific to this library and all result in the same keys being derived.
 
-```cs
+```csharp
 using CardanoSharp.Wallet;
 using CardanoSharp.Wallet.Models.Keys;
 using CardanoSharp.Wallet.Models.Derivations;
@@ -42,7 +42,7 @@ This method requires knowledge of the Address Derivation paths. You will need to
 
 If you would like to learn more about this subject please refer to the Cardano Developer Portal: https://developers.cardano.org/docs/get-started/technical-concepts/#key-derivation
 
-```cs
+```csharp
 using CardanoSharp.Wallet.Extensions;
 using CardanoSharp.Wallet.Models.Keys;
 using CardanoSharp.Wallet.Extensions.Models;
@@ -76,7 +76,7 @@ Console.WriteLine($"Stake Chaincode: {stakePrv.Chaincode.ToStringHex()}");
 
 First we will create a `WalletPath` using a string.
 
-```cs
+```csharp
 using CardanoSharp.Wallet.Models;
 
 // were going to utilize the above `paymentPath`
@@ -99,7 +99,7 @@ Console.WriteLine($"Path Raw: {walletPath.ToString()}");
 
 This time instead of using a string, we will pass the parts we want.
 
-```cs
+```csharp
 using CardanoSharp.Wallet.Enums;
 
 PurposeType purpose = PurposeType.Shelley;
@@ -132,7 +132,7 @@ Console.WriteLine($"Path Raw: {walletPathParts.ToString()}");
 
 FluentApi is probably the easiest way to derive keys.
 
-```cs
+```csharp
 IIndexNodeDerivation paymentNode = rootNode
     .Derive(PurposeType.Shelley)
     .Derive(CoinType.Ada)
@@ -152,7 +152,7 @@ Console.WriteLine($"Payment Chaincode: {paymentNode.PrivateKey.Chaincode.ToStrin
 
 CardanoSharp supports CIP1852 (Shelley), CIP1854 (MultiSig), and CIP1855 (Policy Keys). Using `WalletPath` or FluentApi, you can easily derive these different types.
 
-```cs
+```csharp
 // WalletPath
 var shelleyWalletPath = new WalletPath($"m/{(int)PurposeType.Shelley}'/1815'/0'");
 var multiSigWalletPath = new WalletPath($"m/{(int)PurposeType.MultiSig}'/1815'/0'");
@@ -179,7 +179,7 @@ IAccountNodeDerivation policyKeysFluent = rootNode
 
 All of our examples have used the Hierarchical Deterministic (BIP39) method for getting key pairs. You also can just generate a single key pair. 
 
-```cs
+```csharp
 using CardanoSharp.Wallet.Models.Keys;
 using CardanoSharp.Wallet.Extensions;
 using CardanoSharp.Wallet.Extensions.Models;
@@ -189,7 +189,7 @@ KeyPair keyPair = KeyPair.GenerateKeyPair();
 
 Just like HD Key Pairs, you can sign and verify.
 
-```cs
+```csharp
 // A simple message to sign
 string message = "CardanoSharp is awesome!";
 // Convert message to a byte[]

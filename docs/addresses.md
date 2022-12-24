@@ -17,7 +17,7 @@ Supported Address Types:
 
 This address type is the most common. Since this address type requires the Stake keys along side the External or Internal keys, funds sent to these addresses will automatically contribute to the wallets staking.
 
-```cs
+```csharp
 using CardanoSharp.Wallet;
 using CardanoSharp.Wallet.Enums;
 using CardanoSharp.Wallet.Models.Keys;
@@ -54,7 +54,7 @@ Console.WriteLine($"Delegation Address: {delegationAddress.ToString()}");
 
 The enterprise address utilizes only the External or Internal keys. Any funds sent here will not be able to be staked.
 
-```cs
+```csharp
 // We are going to utilize the wallet created above
 
 Address enterpriseAddress = new AddressService()
@@ -68,7 +68,7 @@ Console.WriteLine($"Enterprise Address: {enterpriseAddress.ToString()}");
 
 The staking address is also known as the reward address. 
 
-```cs
+```csharp
 // Again utilizely the wallet created above
 
 Address stakingAddress = new AddressService()
@@ -86,7 +86,7 @@ Shared/Script Addresses come out of CIP1845 (Multi-signature HD Wallets). These 
 
 Lets start by creating a simple delegation script address that can be signed by one of two keys.
 
-```cs
+```csharp
 using CardanoSharp.Wallet.Encoding;
 using CardanoSharp.Wallet.Utilities;
 using CardanoSharp.Wallet.Extensions;
@@ -174,7 +174,7 @@ Console.WriteLine($"Shared/Script Address: {delegationScriptAddress.ToString()}"
 
 Just like a normal enterprise address, we just need to remove the staking piece to generate the address.
 
-```cs
+```csharp
 //Generate Address
 Address enterpriseScriptAddress = new AddressService().GetEnterpriseScriptAddress(stakePolicyScript, NetworkType.Testnet);
 Console.WriteLine($"Shared/Script Address: {enterpriseScriptAddress.ToString()}");
