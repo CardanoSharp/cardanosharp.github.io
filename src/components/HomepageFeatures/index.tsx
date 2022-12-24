@@ -4,49 +4,63 @@ import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
   description: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
     title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        CardanoSharp was built with one thing in mind: Be as frictionless as possible. Add Cardano support to your .NET app today!
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Manage Wallets',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Being able to work with Mnemonics, Keys, and Addresses, will give you the ability to build better experiences for your users.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Build Transactions',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        CardanoSharp allows you to build transactions in flexible ways. Build partial or whole transactions allowing you to accommodate many workflows.
+      </>
+    ),
+  },
+  {
+    title: 'Utility',
+    description: (
+      <>
+        CardanoSharp has many utilities to help you quickly parse and work with CBOR, Keys, Addresses, and Transactions.
+      </>
+    ),
+  },
+  {
+    title: 'Mint and Burn',
+    description: (
+      <>
+        You can use CardanoSharp to easily manage your NFT Collection with Minting and Burning using Native Scripts.
+      </>
+    ),
+  },
+  {
+    title: 'Support',
+    description: (
+      <>
+        CardanoSharp is community driven. Not only do we focus on bring Cardano to .NET, but we bring .NET to other Cardano Projects such as Koios and Blockfrost.
       </>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({title, description}: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
         <p>{description}</p>
