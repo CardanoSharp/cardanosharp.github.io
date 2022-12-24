@@ -12,7 +12,7 @@ In this section, we're going to review how to:
 
 Lets start simple. Here were just going to generate a new mnemonic.
 
-```cs
+```csharp
 using CardanoSharp.Wallet;
 using CardanoSharp.Wallet.Words;
 using CardanoSharp.Wallet.Enums;
@@ -31,7 +31,7 @@ In the first mnemonic example, we generated a 24 word Mnemonic. This is just 1 o
 
 Word Counts Available: 9, 12, 15, 18, 21, 24
 
-```cs
+```csharp
 Mnemonic mnemonic9 = mnemonicService.Generate(9);
 Console.WriteLine($"9 Words: {mnemonic9.Words}");
 
@@ -59,7 +59,7 @@ Here are the available lanugages: (English, ChineseSimplified, ChineseTraditiona
 
 *Please Note: German was translated in house. If an officially supported German version comes available we will add it as German2*
 
-```cs
+```csharp
 Mnemonic mnemonicEnglish = mnemonicService.Generate(12, WordLists.English);
 Console.WriteLine($"English Words: {mnemonicEnglish.Words}");
 
@@ -98,7 +98,7 @@ Console.WriteLine($"German Words: {mnemonicGerman.Words}");
 
 Now that we have reviewed how to generate a new mnemonic, lets go over how to restore an existing mnemonic.
 
-```cs
+```csharp
 Mnemonic restored = mnemonicService.Restore("episode around subway accuse confirm then disease stuff upgrade select barrel action priority carry silk awesome ability simple pupil frost run isolate behave fringe");
 Console.WriteLine($"Words: {restored.Words}");
 Console.WriteLine($"Entropy: {restored.Entropy.ToStringHex()}");
@@ -108,7 +108,7 @@ Console.WriteLine($"Entropy: {restored.Entropy.ToStringHex()}");
 
 Again by default, we assume the language is english, but you can restore any mnemonic from the support lanugages listed above.
 
-```cs
+```csharp
 Mnemonic restoredEnglish = mnemonicService.Restore("where require game dumb office police ahead cousin detail orchard toss inject", WordLists.English);
 Console.WriteLine($"English Words: {mnemonicEnglish.Words}");
 Console.WriteLine($"English Entropy: {mnemonicEnglish.Entropy.ToStringHex()}");
