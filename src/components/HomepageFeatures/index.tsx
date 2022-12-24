@@ -52,7 +52,7 @@ const FeatureList: FeatureItem[] = [
     title: 'Support',
     description: (
       <>
-        CardanoSharp is community driven. Not only do we focus on bring Cardano to .NET, but we bring .NET to other Cardano Projects such as Koios and Blockfrost.
+        CardanoSharp is community driven. Not only do we focus on bring Cardano to .NET, but we bring .NET to other Cardano Projects such as <a href="https://github.com/CardanoSharp/cardanosharp-blockfrost" target="_new">Blockfrost</a> and <a href="https://github.com/cardano-community/cardanosharp-koios" target="_new">Koios</a>.
       </>
     ),
   },
