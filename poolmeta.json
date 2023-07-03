@@ -1,0 +1,7 @@
+{
+    "name": "CardanoSHARP Stake Pool",
+    "description": "The CardanoSHARP Stake Pool - Support .NET Development on Cardano.",
+    "ticker": "SHARP",
+    "homepage": "https://www.cardanosharp.com/",
+    "extended": "https://www.cardanosharp.com/poolmeta-extended.json"
+}
